@@ -1,7 +1,8 @@
 import web
 
 urls = (
-   '/', 'index'
+   '/', 'index', 
+   '/', 'templates'
 )
 
 render = web.template.render('templates/')

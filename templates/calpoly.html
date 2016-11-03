@@ -1,5 +1,5 @@
 
-
+$var cssfiles: login.css bootstrap.css
 
 
 
@@ -29,39 +29,18 @@
   
 
   
-  <link href="media/skins/sage/bootstrap/css/bootstrap.css" media="screen" type="text/css" rel="stylesheet" >
-  <link href="media/skins/sage/css/login.css" media="screen" type="text/css" rel="stylesheet" />
+  <link href="static/bootstrap.css" media="screen" type="text/css" rel="stylesheet" >
+  <link href="static/login.css" media="screen" type="text/css" rel="stylesheet" />
 
   <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1">
 
   
   <!--<script src="https://webresource.its.calpoly.edu/deployJava/2/deployJava.js"></script>-->
-  <script language="JavaScript" type="text/javascript">
-  function checkIfSupportedOS() {
-     if (navigator.userAgent.indexOf("Windows NT 5.1")!=-1) {
-        document.getElementById("unsupportedOS").style.display = "block";
-        document.getElementById("loginForm").style.display = "none";
-     } else {
-        document.getElementById("unsupportedOS").style.display = "none";
-     }
-  };
-  function hideJavaPlugin() {
-     if (document.getElementById("deployJavaPlugin"))
-        document.getElementById("deployJavaPlugin").style.display = "none";
-  };
-  function reportJavaVersion() {
-     var url = "https://my.calpoly.edu/cas/clientData?javaVersion="+deployJava.getJREs();
-     var xmlHttp = new XMLHttpRequest();
-     xmlHttp.open("GET", url, false);
-     xmlHttp.send(null);
-  };
-  </script>
-  
 </head>
 
   
   <!-- Removed reportJavaVersion() from body onload -->
-  <body onload="checkIfSupportedOS(); hideJavaPlugin();">
+  <body>
   
     <div id = "mainContainer">
       <header>
@@ -88,13 +67,13 @@
 
 <div class = "mobile-header">
 	<div class = "sidebtn">
-		<button id = "leftSidebarOpen"><img src = "media/skins/sage/images/sidebarslider.png" width="20" height="24"/></button>
+		<button id = "leftSidebarOpen"><img src = "static/sidebarslider.png" width="20" height="24"/></button>
 	</div>
 </div> 
 <div id = "loginContainer" class="page-inner">
 	<div id="loginLogo">
 		<a href = "http://www.calpoly.edu" title="Cal Poly San Luis Obispo">
-			<img src = "media/skins/sage/images/CP_Logo_Transparent.png" alt = "Cal Poly San Luis Obispo"/>
+			<img src = "static/CP_Logo_Transparent.png" alt = "Cal Poly San Luis Obispo"/>
 		</a>
 	</div> 
 
@@ -140,19 +119,6 @@
 	<div id = "mayday">
 		<h1>Critical System Status</h1>
 	</div>
-    <div id="unsupportedOS">
-      <h1>Discontinued Windows XP Support</h1>
-      <div class="mayday-item ERROR" style="padding: 0px 10px 6px 40px;">
-        <p><span style="color: #aa2535; font-weight: bold;">Warning:</span>
-        As of <span style="color: #aa2535; font-weight: bold;">June 20, 2015</span>,
-        your system is denied access for security reasons. Systems that are no
-        longer supported by Apple and Microsoft are considered a security risk.
-        For your and the University's protection, computers running Windows XP
-        and Apple OS X 10.6 or older will not be allowed to connect to Cal Poly
-        wired or wireless network. Please upgrade your machine or Operating
-        System to gain access.</p>
-      </div>
-    </div>
 </div>
 </div>
 
