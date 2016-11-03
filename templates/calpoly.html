@@ -1,38 +1,80 @@
-$var cssfiles: login.css
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="gr__my_calpoly_edu"><script src="https://js-agent.newrelic.com/nr-974.min.js"></script><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
   <title>Cal Poly Authentication</title>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <meta content="Cal Poly, San Luis Obispo, a nationally ranked, four-year, public university that emphasizes a Learn By Doing educational experience; located minutes from California's Central Coast beaches." name="description">
-  <meta content="Cal Poly, California Polytechnic State University, San Luis Obispo, engineering, agriculture, business, architecture, liberal arts, four-year comprehensive, public university, nationally ranked" name="keywords">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta content="Cal Poly, San Luis Obispo, a nationally ranked, four-year, public university that emphasizes a Learn By Doing educational experience; located minutes from California's Central Coast beaches." name="description" />
+  <meta content="Cal Poly, California Polytechnic State University, San Luis Obispo, engineering, agriculture, business, architecture, liberal arts, four-year comprehensive, public university, nationally ranked" name="keywords" />
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 
   
   <meta http-equiv="Refresh" content="1620; /cas/login">
   
 
   
-  <link href="bootstrap.css" media="screen" type="text/css" rel="stylesheet">
-  <link href="login.css" media="screen" type="text/css" rel="stylesheet">
+  <link href="media/skins/sage/bootstrap/css/bootstrap.css" media="screen" type="text/css" rel="stylesheet" >
+  <link href="media/skins/sage/css/login.css" media="screen" type="text/css" rel="stylesheet" />
 
-  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1"> 
-</head><style type="text/css" id="googleredesignedcss">null</style>
- 
-    <div id="mainContainer">
+  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1">
+
+  
+  <!--<script src="https://webresource.its.calpoly.edu/deployJava/2/deployJava.js"></script>-->
+  <script language="JavaScript" type="text/javascript">
+  function checkIfSupportedOS() {
+     if (navigator.userAgent.indexOf("Windows NT 5.1")!=-1) {
+        document.getElementById("unsupportedOS").style.display = "block";
+        document.getElementById("loginForm").style.display = "none";
+     } else {
+        document.getElementById("unsupportedOS").style.display = "none";
+     }
+  };
+  function hideJavaPlugin() {
+     if (document.getElementById("deployJavaPlugin"))
+        document.getElementById("deployJavaPlugin").style.display = "none";
+  };
+  function reportJavaVersion() {
+     var url = "https://my.calpoly.edu/cas/clientData?javaVersion="+deployJava.getJREs();
+     var xmlHttp = new XMLHttpRequest();
+     xmlHttp.open("GET", url, false);
+     xmlHttp.send(null);
+  };
+  </script>
+  
+</head>
+
+  
+  <!-- Removed reportJavaVersion() from body onload -->
+  <body onload="checkIfSupportedOS(); hideJavaPlugin();">
+  
+    <div id = "mainContainer">
       <header>
-        <div id="top" class="navbar">
-          <ul class="leftLinks nav">
-            <li><a href="http://www.calpoly.edu/student/parents.html">Parents</a></li>
-            <li><a href="http://servicedesk.calpoly.edu/accounts">Account</a></li>
-            <li><a href="http://maps.calpoly.edu">Map</a></li>
-            <li><a href="https://myportal.calpoly.edu/s/directory">Directory</a></li>
+        <div id = "top" class = "navbar">
+          <ul class = "leftLinks nav">
+            <li><a href = "http://www.calpoly.edu/student/parents.html">Parents</a></li>
+            <li><a href = "http://servicedesk.calpoly.edu/accounts">Account</a></li>
+            <li><a href = "http://maps.calpoly.edu">Map</a></li>
+            <li><a href = "https://myportal.calpoly.edu/s/directory">Directory</a></li>
           </ul>
         </div>
       </header>
-      <div id="bodyContainer">
+      <div id = "bodyContainer">
 
 
 
@@ -44,22 +86,22 @@ $var cssfiles: login.css
 
 
 
-<div class="mobile-header">
-	<div class="sidebtn">
-		<button id="leftSidebarOpen"><img src="media/skins/sage/images/sidebarslider.png" width="20" height="24"></button>
+<div class = "mobile-header">
+	<div class = "sidebtn">
+		<button id = "leftSidebarOpen"><img src = "media/skins/sage/images/sidebarslider.png" width="20" height="24"/></button>
 	</div>
 </div> 
-<div id="loginContainer" class="page-inner" style="display: block; margin-top: 115px;">
+<div id = "loginContainer" class="page-inner">
 	<div id="loginLogo">
-		<a href="http://www.calpoly.edu" title="Cal Poly San Luis Obispo">
-			<img src="media/skins/sage/images/CP_Logo_Transparent.png" alt="Cal Poly San Luis Obispo">
+		<a href = "http://www.calpoly.edu" title="Cal Poly San Luis Obispo">
+			<img src = "media/skins/sage/images/CP_Logo_Transparent.png" alt = "Cal Poly San Luis Obispo"/>
 		</a>
 	</div> 
 
-<div id="loginFormContainer">
+<div id="loginFormContainer" >
   	<div id="loginForm"> 
       	<!-- BEGIN CAS -->
-			<form id="fm1" name="login_form" action="/cas/login" method="post" _lpchecked="1">
+			<form id="fm1" name="login_form" action="/cas/login" method="post">
 
 				<div class="uportal-text-error" style="margin-top: .5em; margin-bottom: .5em;">
 					
@@ -71,7 +113,7 @@ $var cssfiles: login.css
 				
 				
 					
-					<input id="username" name="username" class="required input-medium" tabindex="1" accesskey="n" type="text" value="" size="25" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAnVJREFUWAntVzuL4lAUPokBsVB0t9odK8VCLCal3Q4WbmUpCFv6DyymEmys9gf4B4RlS7GwEWQsBAsL195q2J3KWIiVrz0nJBcTk9yr3jCw7AG5j3PO9325j2OiAFq73X7Y7/ffsft0Op0+05wsUxTlD2K9aJr23Gw2f7txFYv8FxJ/dDtljlHICkU8ukWo9ORhk9ODEIe1yo7nUnH05JgJd3DBpcre8yD9Xly0Au9q/7aAfD4PjUYDqPWzUFegUChAIpEAav0sVAF4901eu/USEaoAL0L3nENANBqFbDYLqVTKHQe3+i6AXBOaPU4mk1Cv1yEej8PxeIR+vw/z+dx03+qzsYNatgLFYtEkp2BVVaFUKrG8W30MIKDDBATEhOpiAqbTKWw2G5OMtmA0GjHiW30MIKCjtFqtk+2ng5ZOp8EwDFiv1/a02Qb5HIGcAV7JNwwZW+8Hrw4BnFypbhRioAidbYFUdAEw/Gf8QO8H7ybA0viF1QEB0cIhmUwGqtUqxGIxM2cymcBwOLzIx1X4JF0A1YxyuWzWkgtGjwlpAiKRCFQqFdB13YPGf0qagFqtBrlczmSiOkJGFZVnKl4Hem+/26hYEfHhcIBerwe73U4IkyS+CEVygpbLJQwGA+h2u7BYLIC2RMSwFmjPeB+/4om8+8NkNpsxzqCXEBaEHZW+VFDEIyb8kLUd5wS8vnkIrc+lb7xg8p//d4jE82L4x5SHcKf/v4CrCxEe1Deq4byVX61WrBBtt1vPcMK6WgAijfFX80Q8m+x0Omcj3+746jNAdQOVG76Qgg7CIKyrBeCVfcVEHQF+0hIK8rEwyqFcwiCsv+R847qxq2vXAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+					<input id="username" name="username" class="required input-medium" tabindex="1" accesskey="n" type="text" value="" size="25" autocomplete="false"/>
 				
 				<span class="help-block"><a href="http://servicedesk.calpoly.edu/accounts" style="visibility: hidden;">Account Help</a></span>
 				</div>
@@ -81,24 +123,24 @@ $var cssfiles: login.css
 				
 
 				
-				<input id="password" name="password" class="required input-medium" tabindex="2" accesskey="p" type="password" value="" size="25" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAnVJREFUWAntVzuL4lAUPokBsVB0t9odK8VCLCal3Q4WbmUpCFv6DyymEmys9gf4B4RlS7GwEWQsBAsL195q2J3KWIiVrz0nJBcTk9yr3jCw7AG5j3PO9325j2OiAFq73X7Y7/ffsft0Op0+05wsUxTlD2K9aJr23Gw2f7txFYv8FxJ/dDtljlHICkU8ukWo9ORhk9ODEIe1yo7nUnH05JgJd3DBpcre8yD9Xly0Au9q/7aAfD4PjUYDqPWzUFegUChAIpEAav0sVAF4901eu/USEaoAL0L3nENANBqFbDYLqVTKHQe3+i6AXBOaPU4mk1Cv1yEej8PxeIR+vw/z+dx03+qzsYNatgLFYtEkp2BVVaFUKrG8W30MIKDDBATEhOpiAqbTKWw2G5OMtmA0GjHiW30MIKCjtFqtk+2ng5ZOp8EwDFiv1/a02Qb5HIGcAV7JNwwZW+8Hrw4BnFypbhRioAidbYFUdAEw/Gf8QO8H7ybA0viF1QEB0cIhmUwGqtUqxGIxM2cymcBwOLzIx1X4JF0A1YxyuWzWkgtGjwlpAiKRCFQqFdB13YPGf0qagFqtBrlczmSiOkJGFZVnKl4Hem+/26hYEfHhcIBerwe73U4IkyS+CEVygpbLJQwGA+h2u7BYLIC2RMSwFmjPeB+/4om8+8NkNpsxzqCXEBaEHZW+VFDEIyb8kLUd5wS8vnkIrc+lb7xg8p//d4jE82L4x5SHcKf/v4CrCxEe1Deq4byVX61WrBBtt1vPcMK6WgAijfFX80Q8m+x0Omcj3+746jNAdQOVG76Qgg7CIKyrBeCVfcVEHQF+0hIK8rEwyqFcwiCsv+R847qxq2vXAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+				<input id="password" name="password" class="required input-medium" tabindex="2" accesskey="p" type="password" value="" size="25" autocomplete="off"/>
 				<span class="help-block"><a href="https://myportal.calpoly.edu/s/password">Need Help?</a></span>
 				</div>
 
-				<input type="hidden" name="lt" value="_cE1200E34-47D7-E3A2-0661-3A158EB0484F_kA32F32E3-8251-EECF-7EF0-AC869ED25C72">
-				<input type="hidden" name="_eventId" value="submit">
+				<input type="hidden" name="lt" value="_cA7FF67A0-FD53-6AC4-3DB2-E118D64F9D87_k9C354941-C539-5505-7BEB-A390B7A457C8" />
+				<input type="hidden" name="_eventId" value="submit" />
 				<div class="submit-block">
 					<!--<label for="submitLogin">Submit</label>-->
-					<input id="submitLogin" class="btn btn-success loginButton" name="submit" accesskey="l" value="Sign In" tabindex="4" type="submit">
+					<input id = "submitLogin" class="btn btn-success loginButton" name="submit" accesskey="l" value="Sign In" tabindex="4" type="submit" />
 				</div>
 				<!--input class="btn-reset" name="reset" accesskey="c" value="CLEAR" tabindex="5" type="reset" /-->				
 		</form>
 		<!-- END CAS -->	
 	</div>
-	<div id="mayday" style="display: block;">
+	<div id = "mayday">
 		<h1>Critical System Status</h1>
-	<div class="mayday-item closed ERROR"><div class="title"><h2>PolyLearn Sunday Maintenance 11/6/16</h2><span>Thu, 03 Nov 2016</span></div><div class="abstract">This Sunday 11/6/16 PolyLearn will be unavailable from 8:00am to 12:00pm while PolyLearn upgrades are being applied.</div><div class="description"><p>This Sunday 11/6/16 PolyLearn will be unavailable from 8:00am to 12:00pm while PolyLearn upgrades are being applied.</p></div></div></div>
-    <div id="unsupportedOS" style="display: none;">
+	</div>
+    <div id="unsupportedOS">
       <h1>Discontinued Windows XP Support</h1>
       <div class="mayday-item ERROR" style="padding: 0px 10px 6px 40px;">
         <p><span style="color: #aa2535; font-weight: bold;">Warning:</span>
@@ -124,3 +166,5 @@ $var cssfiles: login.css
         </footer>
         
         </div><!-- end main container-->
+</html>
+
