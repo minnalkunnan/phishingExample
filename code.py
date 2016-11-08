@@ -2,8 +2,6 @@ import web
 
 urls = (
    '/', 'index', 
-   '/', 'templates',
-   '/', 'login'
 )
 
 render = web.template.render('templates/')
